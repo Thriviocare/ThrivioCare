@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 10-Minute Morning Routine — Thrivio Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --bg:#FAFAF8;
+  --surface:#FFFFFF;
+  --text:#1a1a1a;
+  --text2:#4a4a4a;
+  --text3:#8a8a8a;
+  --border:#e8e6e1;
+  --green:#2d6a4f;
+  --green-bg:#ecf5f0;
+  --blue:#1d4e89;
+  --blue-bg:#e8f0fa;
+  --orange:#b45309;
+  --orange-bg:#fef3e2;
+  --purple:#5b21b6;
+  --purple-bg:#f0ebfa;
+  --red:#b91c1c;
+  --red-bg:#fce8e8;
+  --yellow-bg:#fefce8;
+  --gray-bg:#f3f2ef;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* ---- NAV ---- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,248,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+nav .logo{font-family:var(--sans);font-weight:600;font-size:.9rem;letter-spacing:-.02em;color:var(--text)}
+nav .logo span{color:var(--green);font-weight:600}
+nav a{font-size:.8rem;color:var(--text3);text-decoration:none;transition:color .2s}
+nav a:hover{color:var(--text)}
+
+/* ---- HERO ---- */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(45,106,79,0.06) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-150px;left:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(29,78,137,0.05) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:680px;position:relative}
+.hero-tag{display:inline-block;padding:.35rem 1rem;border-radius:100px;background:var(--green-bg);color:var(--green);font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2rem}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.8rem,6vw,4.2rem);line-height:1.1;letter-spacing:-.03em;margin-bottom:1.5rem;color:var(--text)}
+.hero h1 em{font-style:italic;color:var(--green)}
+.hero p{font-size:1.1rem;color:var(--text2);max-width:480px;margin:0 auto 2.5rem;line-height:1.8;font-weight:300}
+.hero-meta{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
+.hero-meta .item{text-align:center}
+.hero-meta .item .label{font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-bottom:.2rem;font-weight:500}
+.hero-meta .item .value{font-size:.9rem;font-weight:500;color:var(--text)}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--text3);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;animation:float 3s ease-in-out infinite}
+.scroll-hint .arrow{width:1px;height:28px;background:var(--border);position:relative}
+.scroll-hint .arrow::after{content:'';position:absolute;bottom:0;left:-3px;width:7px;height:7px;border-right:1px solid var(--text3);border-bottom:1px solid var(--text3);transform:rotate(45deg)}
+@keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+/* ---- SECTION LAYOUT ---- */
+section{padding:6rem 2rem}
+.container{max-width:760px;margin:0 auto}
+.section-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--green);font-weight:600;margin-bottom:.75rem}
+.section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,2.8rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem}
+.section-subtitle{font-size:1.05rem;color:var(--text2);line-height:1.8;margin-bottom:3rem;font-weight:300}
+.divider{width:100%;height:1px;background:var(--border);margin:0}
+
+/* ---- STATS ---- */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:2.5rem 0}
+.stat-card{padding:1.5rem;border-radius:12px;text-align:center}
+.stat-card .number{font-family:var(--serif);font-size:2.4rem;line-height:1;margin-bottom:.4rem;letter-spacing:-.03em}
+.stat-card .desc{font-size:.82rem;color:var(--text2);line-height:1.5}
+.stat-green{background:var(--green-bg)}.stat-green .number{color:var(--green)}
+.stat-red{background:var(--red-bg)}.stat-red .number{color:var(--red)}
+.stat-blue{background:var(--blue-bg)}.stat-blue .number{color:var(--blue)}
+.stat-orange{background:var(--orange-bg)}.stat-orange .number{color:var(--orange)}
+
+/* ---- PROTOCOL STEPS ---- */
+.step{border-radius:14px;padding:2rem 2rem 2rem 2rem;margin-bottom:1.5rem;border-left:4px solid transparent;position:relative}
+.step-badge{display:inline-block;padding:.25rem .75rem;border-radius:100px;font-size:.7rem;font-weight:600;letter-spacing:.04em;color:white;margin-bottom:1rem}
+.step h3{font-family:var(--serif);font-size:1.5rem;margin-bottom:.75rem;letter-spacing:-.01em}
+.step p,.step li{font-size:.92rem;color:var(--text2);line-height:1.8}
+.step ul{list-style:none;padding:0;margin:.75rem 0}
+.step ul li{padding:.3rem 0 .3rem 1.2rem;position:relative}
+.step ul li::before{content:'';position:absolute;left:0;top:.75rem;width:6px;height:6px;border-radius:50%}
+.step-green{background:var(--green-bg);border-left-color:var(--green)}
+.step-green .step-badge{background:var(--green)}
+.step-green ul li::before{background:var(--green)}
+.step-blue{background:var(--blue-bg);border-left-color:var(--blue)}
+.step-blue .step-badge{background:var(--blue)}
+.step-blue ul li::before{background:var(--blue)}
+.step-orange{background:var(--orange-bg);border-left-color:var(--orange)}
+.step-orange .step-badge{background:var(--orange)}
+.step-orange ul li::before{background:var(--orange)}
+.step-yellow{background:var(--yellow-bg);border-left-color:var(--orange)}
+.step-yellow .step-badge{background:var(--orange)}
+.step-yellow ul li::before{background:var(--orange)}
+.step-purple{background:var(--purple-bg);border-left-color:var(--purple)}
+.step-purple .step-badge{background:var(--purple)}
+.step-purple ul li::before{background:var(--purple)}
+
+.summary-bar{background:var(--text);color:white;text-align:center;padding:1.2rem 2rem;border-radius:12px;margin:2rem 0}
+.summary-bar .main{font-size:.95rem;font-weight:500;letter-spacing:-.01em}
+.summary-bar .sub{font-size:.78rem;color:rgba(255,255,255,.55);margin-top:.3rem;font-weight:300}
+
+/* ---- SCIENCE CARDS ---- */
+.science-card{padding:1.5rem 1.75rem;border-radius:12px;margin-bottom:1rem}
+.science-card h4{font-family:var(--serif);font-size:1.15rem;margin-bottom:.6rem}
+.science-card p{font-size:.88rem;color:var(--text2);line-height:1.8}
+
+/* ---- MISTAKE ITEMS ---- */
+.mistake{display:flex;gap:1.25rem;margin-bottom:1.75rem;align-items:flex-start}
+.mistake-num{width:32px;height:32px;min-width:32px;border-radius:50%;background:var(--red);color:white;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;margin-top:.15rem}
+.mistake h4{font-size:1rem;font-weight:600;margin-bottom:.3rem;letter-spacing:-.01em}
+.mistake p{font-size:.9rem;color:var(--text2);line-height:1.7}
+
+/* ---- CHALLENGE TIMELINE ---- */
+.day-item{display:flex;gap:1.25rem;margin-bottom:.5rem;align-items:stretch}
+.day-line{display:flex;flex-direction:column;align-items:center;width:32px;min-width:32px}
+.day-dot{width:32px;height:32px;min-width:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:600;color:white}
+.day-connector{width:2px;flex:1;min-height:12px}
+.day-content{padding-bottom:1.5rem}
+.day-content h4{font-size:.95rem;font-weight:600;margin-bottom:.25rem}
+.day-content p{font-size:.88rem;color:var(--text2);line-height:1.7}
+
+/* ---- NUTRITION ---- */
+.food-list{margin:1.5rem 0}
+.food-item{display:flex;justify-content:space-between;align-items:baseline;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.food-item:last-child{border-bottom:none}
+.food-item .name{font-size:.9rem;font-weight:400}
+.food-item .protein{font-size:.82rem;font-weight:600;color:var(--green);white-space:nowrap}
+.food-bad .name{font-size:.9rem}
+.food-bad .reason{font-size:.8rem;color:var(--text3);font-weight:300}
+
+/* ---- TRACKER ---- */
+.tracker-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.8rem}
+.tracker-table th{background:var(--text);color:white;padding:.6rem .5rem;font-weight:500;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em}
+.tracker-table th:first-child{border-radius:8px 0 0 0}
+.tracker-table th:last-child{border-radius:0 8px 0 0}
+.tracker-table td{padding:.5rem .5rem;text-align:center;border-bottom:1px solid var(--border)}
+.tracker-table tr:nth-child(even) td{background:var(--gray-bg)}
+.tracker-table td:first-child{font-weight:600;width:36px}
+.tracker-table td:last-child{text-align:left}
+.checkbox{width:14px;height:14px;border:1.5px solid var(--border);border-radius:3px;display:inline-block}
+
+/* ---- CALLOUT ---- */
+.callout{padding:1.25rem 1.5rem;border-radius:10px;margin:2rem 0;display:flex;gap:.75rem;align-items:flex-start}
+.callout .emoji{font-size:1.2rem;line-height:1.5}
+.callout .text{font-size:.9rem;color:var(--text2);line-height:1.7}
+.callout .text strong{color:var(--text);font-weight:600}
+.callout-green{background:var(--green-bg)}
+.callout-blue{background:var(--blue-bg)}
+.callout-yellow{background:var(--yellow-bg)}
+.callout-red{background:var(--red-bg)}
+
+/* ---- PERSONA CARDS ---- */
+.persona{padding:1.25rem 1.5rem;border-radius:10px;margin-bottom:.75rem}
+.persona h4{font-size:.95rem;font-weight:600;margin-bottom:.4rem}
+.persona p{font-size:.88rem;color:var(--text2);line-height:1.7}
+
+/* ---- QUICK REF ---- */
+.ref-step{display:flex;gap:1rem;align-items:center;padding:1rem 1.25rem;border-radius:10px;margin-bottom:.6rem;background:var(--surface);border:1px solid var(--border)}
+.ref-badge{padding:.3rem .6rem;border-radius:6px;font-size:.7rem;font-weight:600;color:white;white-space:nowrap}
+.ref-label{font-weight:600;font-size:.9rem;min-width:80px}
+.ref-desc{font-size:.85rem;color:var(--text2)}
+
+/* ---- CTA / FOOTER ---- */
+.cta-section{text-align:center;padding:5rem 2rem;background:var(--text);color:white}
+.cta-section h2{font-family:var(--serif);font-size:clamp(2rem,4vw,2.8rem);font-weight:400;margin-bottom:1rem;letter-spacing:-.02em}
+.cta-section p{color:rgba(255,255,255,.6);font-size:1rem;margin-bottom:.3rem;font-weight:300}
+.cta-handle{display:inline-block;margin:1.5rem 0;padding:.6rem 1.8rem;border-radius:100px;background:var(--green);color:white;font-weight:600;font-size:1rem;text-decoration:none;letter-spacing:-.01em;transition:transform .2s}
+.cta-handle:hover{transform:scale(1.04)}
+footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--text3);background:var(--bg)}
+footer a{color:var(--text3);text-decoration:none}
+
+/* ---- RESPONSIVE ---- */
+@media(max-width:640px){
+  section{padding:4rem 1.25rem}
+  .step{padding:1.5rem}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .hero-meta{gap:1.25rem}
+  .mistake{flex-direction:column;gap:.5rem}
+  .day-item{gap:.75rem}
+  .ref-step{flex-wrap:wrap}
+  .tracker-table{font-size:.7rem}
+}
+
+/* ---- PRINT ---- */
+@media print{
+  nav,.scroll-hint{display:none}
+  section{padding:1.5rem 0;page-break-inside:avoid}
+  .hero{min-height:auto;padding:2rem 0}
+  body{font-size:11pt}
+}
+
+/* ---- ANIMATIONS ---- */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Thrivio <span>Care</span></div>
+  <a href="https://x.com/Thrivio_care" target="_blank">@Thrivio_care</a>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+  <div class="hero-inner fade-up">
+    <div class="hero-tag">Free Guide</div>
+    <h1>The 10-Minute<br>Morning Routine<br>That Changes <em>Everything</em></h1>
+    <p>A science-backed protocol to transform your energy, focus, mood, and health. No equipment. No cost. Just 10 minutes.</p>
+    <div class="hero-meta">
+      <div class="item"><div class="label">Time</div><div class="value">10 minutes</div></div>
+      <div class="item"><div class="label">Difficulty</div><div class="value">Beginner</div></div>
+      <div class="item"><div class="label">Equipment</div><div class="value">None</div></div>
+      <div class="item"><div class="label">Cost</div><div class="value">Free</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    Scroll
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== WHY MORNINGS MATTER ==================== -->
+<section>
+  <div class="container fade-up">
+    <div class="section-label">Chapter 01</div>
+    <h2 class="section-title">Why Your Morning Decides Everything</h2>
+    <p class="section-subtitle">Research from the American Psychological Association shows that the first 60 minutes after waking determine your cortisol pattern, cognitive performance, and emotional regulation for the next 14–16 hours. Your brain transitions through alpha and theta waves upon waking — your most creative, calm, and focused states. What you do in these minutes either leverages this window or destroys it.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card stat-green"><div class="number">92%</div><div class="desc">of high performers have a consistent morning routine</div></div>
+      <div class="stat-card stat-red"><div class="number">73%</div><div class="desc">of adults check their phone within 5 min of waking</div></div>
+      <div class="stat-card stat-blue"><div class="number">2.4×</div><div class="desc">more productive with structured mornings vs. reactive</div></div>
+      <div class="stat-card stat-orange"><div class="number">40%</div><div class="desc">mood improvement from morning sunlight exposure</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== THE MORNING TRAP ==================== -->
+<section>
+  <div class="container fade-up">
+    <div class="section-label">Chapter 02</div>
+    <h2 class="section-title">The Morning Trap</h2>
+    <p class="section-subtitle">Here's what most mornings actually look like — and why they set you up to fail before the day even begins.</p>
+
+    <div class="step" style="background:var(--gray-bg);border-left-color:var(--text3)">
+      <p style="font-size:.92rem;color:var(--text2);line-height:2">
+        <strong>→</strong> Alarm goes off → hit snooze 2–3 times <em style="color:var(--text3)">(fragments sleep cycles)</em><br>
+        <strong>→</strong> Grab phone immediately → scroll, check email <em style="color:var(--text3)">(reactive mode activated)</em><br>
+        <strong>→</strong> Coffee on empty stomach → cortisol spike <em style="color:var(--text3)">(anxiety, not alertness)</em><br>
+        <strong>→</strong> Quick toast or cereal → blood sugar spike <em style="color:var(--text3)">(crash by 10am)</em><br>
+        <strong>→</strong> Rush out the door → stressed <em style="color:var(--text3)">(before a single real decision)</em>
+      </p>
+    </div>
+
+    <div class="callout callout-red">
+      <div class="emoji">⚠️</div>
+      <div class="text"><strong>The result:</strong> Cortisol dysregulated. Dopamine depleted from scrolling. Blood sugar unstable. Decision fatigue before noon. Every. Single. Day. This guide gives you a 10-minute protocol to break this cycle permanently.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== THE PROTOCOL ==================== -->
+<section>
+  <div class="container fade-up">
+    <div class="section-label">Chapter 03</div>
+    <h2 class="section-title">The 10-Minute Protocol</h2>
+    <p class="section-subtitle">Every step is sequenced deliberately. Every minute is backed by peer-reviewed research. Do them in this exact order.</p>
+
+    <div class="step step-green">
+      <div class="step-badge">Step 1 · Minutes 1–2</div>
+      <h3>🧘 No Phone. Just Breathe.</h3>
+      <p>Keep your phone OUT of arm's reach — charge it across the room the night before. Sit up in bed and take 5 deep breaths using the 4-7-6 pattern:</p>
+      <ul>
+        <li>Inhale through your nose for 4 seconds</li>
+        <li>Hold for 7 seconds</li>
+        <li>Exhale slowly through your mouth for 6 seconds</li>
+      </ul>
+      <p>This activates your parasympathetic nervous system and prevents the cortisol spike from immediately reacting to notifications. These 2 minutes set your nervous system's baseline for the entire day.</p>
+    </div>
+
+    <div class="step step-blue">
+      <div class="step-badge">Step 2 · Minutes 3–4</div>
+      <h3>💧 Hydrate Before Anything Else</h3>
+      <p>Drink 500ml (16oz) of water. Prepare it the night before, keep it on your nightstand.</p>
+      <ul>
+        <li>Pinch of sea salt → trace minerals for better cellular absorption</li>
+        <li>Half a lemon → vitamin C + gentle digestive support</li>
+        <li>1 tsp apple cider vinegar → blood sugar stabilization</li>
+      </ul>
+      <p>After 7–8 hours without water, even mild dehydration (1–2%) impairs cognition, mood, and focus. This single step boosts metabolism by 30% within 10 minutes.</p>
+    </div>
+
+    <div class="step step-orange">
+      <div class="step-badge">Step 3 · Minutes 5–6</div>
+      <h3>🏋️ Move Your Body (Just 2 Minutes)</h3>
+      <p>Choose ONE — you don't need all of them:</p>
+      <ul>
+        <li>20 jumping jacks + 10 bodyweight squats</li>
+        <li>10 push-ups + 20 seconds plank</li>
+        <li>2-minute yoga sun salutation flow</li>
+        <li>Dance to one song — this genuinely works</li>
+      </ul>
+      <p>Movement raises core temperature, increases blood flow to the brain by 15–20%, and triggers endorphins + norepinephrine. You'll feel alert within 30 seconds.</p>
+    </div>
+
+    <div class="step step-yellow">
+      <div class="step-badge">Step 4 · Minutes 7–8</div>
+      <h3>☀️ Get Sunlight in Your Eyes</h3>
+      <p>Step outside or stand at the brightest window for 2 minutes. No sunglasses. Look toward the sky (never directly at the sun).</p>
+      <ul>
+        <li>Triggers a precise cortisol pulse — the healthy, waking kind</li>
+        <li>Sets your circadian master clock in the suprachiasmatic nucleus</li>
+        <li>Programs melatonin release 14–16 hours later (tonight's sleep starts now)</li>
+        <li>Increases dopamine receptor sensitivity for the entire day</li>
+        <li>Boosts serotonin — your natural mood stabilizer</li>
+      </ul>
+      <p>Even on cloudy days, outdoor light is 10,000+ lux vs. 200–500 indoors. Overcast still works. Rain? Stand under an awning. Night shift? Use a 10,000 lux light therapy lamp for 5 minutes instead.</p>
+    </div>
+
+    <div class="step step-purple">
+      <div class="step-badge">Step 5 · Minutes 9–10</div>
+      <h3>✍️ Set Your Intention (Pen on Paper)</h3>
+      <p>Grab a notebook — not your phone. Write these three things:</p>
+      <ul>
+        <li><strong>One thing I'm grateful for today</strong></li>
+        <li><strong>My single most important task</strong></li>
+        <li><strong>How I want to feel by tonight</strong></li>
+      </ul>
+      <p>Handwriting activates memory encoding and emotional processing far more than typing (Frontiers in Psychology, 2021). Gratitude journaling increases happiness by 25% and reduces depressive symptoms by 35% over 10 weeks. One sentence is enough.</p>
+    </div>
+
+    <div class="summary-bar">
+      <div class="main">Total: 10 minutes · Equipment: None · Cost: Free · Location: Anywhere</div>
+      <div class="sub">Home, hotel, dorm, office, campsite — no excuses needed</div>
+    </div>
+
+    <div class="callout callout-green">
+      <div class="emoji">📌</div>
+      <div class="text"><strong>After the 10 minutes:</strong> NOW you can check your phone, drink coffee, and start your day. You've already won the morning. Everything else is bonus.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== SCIENCE ==================== -->
+<section>
+  <div class="container fade-up">
+    <div class="section-label">Chapter 04</div>
+    <h2 class="section-title">The Science Behind Each Step</h2>
+    <p class="section-subtitle">Not wellness fluff. Peer-reviewed research. Here's the evidence.</p>
+
+    <div class="science-card" style="background:var(--green-bg)">
+      <h4>🧘 Breathwork</h4>
+      <p>A 2023 Stanford study found "cyclic sighing" (extended exhale) reduced anxiety more effectively than meditation. The 4-7-6 pattern lowers heart rate by ~8 BPM within 60 seconds and reduces the cortisol awakening response by up to 23%.</p>
+    </div>
+    <div class="science-card" style="background:var(--blue-bg)">
+      <h4>💧 Hydration</h4>
+      <p>Journal of Clinical Endocrinology: 500ml water increases metabolic rate by 30% within 10 minutes. University of East London: water improved cognitive performance by 14%. After 8 hours of sleep, you lose approximately 1 liter through respiration and perspiration.</p>
+    </div>
+    <div class="science-card" style="background:var(--orange-bg)">
+      <h4>🏋️ Movement</h4>
+      <p>Even 2 minutes increases BDNF (brain-derived neurotrophic factor), supporting neuroplasticity and memory. Journal of Sports Science: brief morning exercise elevated mood and cognition for 2–4 hours. You don't need intensity — you need activation.</p>
+    </div>
+    <div class="science-card" style="background:var(--yellow-bg)">
+      <h4>☀️ Sunlight</h4>
+      <p>Dr. Andrew Huberman (Stanford): morning light triggers melanopsin receptors, signaling the suprachiasmatic nucleus. JAMA Psychiatry (2022): morning light exposure linked to 20% lower depression risk. Light through windows is 50% less effective than direct outdoor exposure.</p>
+    </div>
+    <div class="science-card" style="background:var(--purple-bg)">
+      <h4>✍️ Journaling</h4>
+      <p>Harvard Business School: people with written goals were 42% more likely to achieve them. The RAS filters 11 million bits of data per second down to ~50 — writing your priorities literally programs which 50 get through. Handwriting activates Broca's area more than typing.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== ADVANCED ==================== -->
+<section>
+  <div class="container fade-up">
+    <div class="section-label">Chapter 05</div>
+    <h2 class="section-title">Advanced: Level Up</h2>
+    <p class="section-subtitle">Once the base routine is locked in (2–3 weeks), layer these upgrades one at a time. Never sacrifice the base 10 minutes for extras.</p>
+
+    <div class="persona" style="background:var(--blue-bg)">
+      <h4>❄️ Cold Exposure (+2 min)</h4>
+      <p>30–60 sec cold water at end of shower. Triggers 200–300% norepinephrine spike lasting 2–3 hours. Start with 15 seconds, add 5 sec/week. European J. of Applied Physiology: boosts metabolic rate 350%, dopamine 250%.</p>
+    </div>
+    <div class="persona" style="background:var(--purple-bg)">
+      <h4>🧘 Meditation (+5 min)</h4>
+      <p>Sit quietly, focus on breath. When mind wanders, gently redirect. Harvard MRI: 8 weeks thickens prefrontal cortex, shrinks amygdala. Even 5 min/day reduces perceived stress by 14%.</p>
+    </div>
+    <div class="persona" style="background:var(--yellow-bg)">
+      <h4>📓 Extended Journaling (+5 min)</h4>
+      <p>Free-write for 5 minutes. Don't edit. Don't judge. Pennebaker (1997): expressive writing reduced doctor visits by 50%. Clears mental clutter and surfaces creative insights.</p>
+    </div>
+    <div class="persona" style="background:var(--green-bg)">
+      <h4>🍎 Intentional First Meal (+10 min)</h4>
+      <p>30g+ protein within 1 hour of waking. Stabilizes blood sugar 4–5 hours, reduces cravings by 60% (University of Missouri). Best: eggs + avocado, Greek yogurt + nuts, or protein smoothie.</p>
+    </div>
+    <div class="persona" style="background:var(--gray-bg)">
+      <h4>🎵 No-Lyric Soundscape (+0 min)</h4>
+      <p>Play instrumental music or nature sounds during your routine. Lyrics activate language centers, pulling you from the calm alpha/theta state. Zero extra time — just press play.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== CUSTOMIZE ==================== -->
+<section>
+  <div class="container fade-up">
+    <div class="section-label">Chapter 06</div>
+    <h2 class="section-title">Customize It for Your Life</h2>
+    <p class="section-subtitle">Not everyone has the same schedule. Here's how to adapt without losing the routine's core effectiveness.</p>
+
+    <div class="persona" style="background:var(--green-bg)"><h4>🌅 Early Bird (5–6 AM)</h4><p>Ideal window for sunlight. Do the full protocol. Bonus: add 5 min journaling or meditation since you have buffer time before the world wakes up.</p></div>
+    <div class="persona" style="background:var(--purple-bg)"><h4>🌙 Night Owl (8–9 AM)</h4><p>The "no phone" rule is even more critical — less morning buffer. Compress: do movement outside to combine steps 3 and 4. Keep water bedside.</p></div>
+    <div class="persona" style="background:var(--orange-bg)"><h4>👶 Parent with Young Kids</h4><p>Wake 10 min before the kids. Movement: playing with kids counts. Sunlight: take kids outside — their circadian rhythm benefits too. Even 30-second mental intention works.</p></div>
+    <div class="persona" style="background:var(--blue-bg)"><h4>🏢 Shift Worker</h4><p>Do this when your "day" starts, even at 3 PM or midnight. No sunlight? Use a 10,000-lux therapy lamp. Breathing and water are time-agnostic.</p></div>
+    <div class="persona" style="background:var(--yellow-bg)"><h4>✈️ Traveler</h4><p>Works in any hotel room. Pack a collapsible water bottle. Jet lagged? Morning light at destination is the #1 circadian reset tool.</p></div>
+    <div class="persona" style="background:var(--gray-bg)"><h4>💻 Remote Worker</h4><p>Biggest risk: bed to laptop with zero buffer. This routine IS the commute. Sunlight step is critical — remote workers get 80% less natural light.</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== 7 MISTAKES ==================== -->
+<section>
+  <div class="container fade-up">
+    <div class="section-label">Chapter 07</div>
+    <h2 class="section-title">7 Mistakes That Ruin Mornings</h2>
+    <p class="section-subtitle" style="margin-bottom:2.5rem">Avoid these to protect your energy and focus from the first minute.</p>
+
+    <div class="mistake"><div class="mistake-num">1</div><div><h4>Hitting Snooze</h4><p>Each snooze starts a new sleep cycle your body can't finish, causing "sleep inertia" — grogginess lasting 2–4 hours. <strong>Fix:</strong> Put your alarm across the room.</p></div></div>
+    <div class="mistake"><div class="mistake-num">2</div><div><h4>Checking Phone First</h4><p>Social media triggers dopamine before you've earned it. Email puts you in someone else's agenda. <strong>Fix:</strong> Phone stays untouched until the 10-minute routine is done.</p></div></div>
+    <div class="mistake"><div class="mistake-num">3</div><div><h4>Coffee Before Water</h4><p>Caffeine on a dehydrated, empty stomach amplifies cortisol and irritates your stomach lining. <strong>Fix:</strong> Water first, always. Coffee 60–90 min after waking.</p></div></div>
+    <div class="mistake"><div class="mistake-num">4</div><div><h4>Skipping Sunlight</h4><p>Indoor lighting (200–500 lux) can't set your circadian clock. You need 10,000+ lux. <strong>Fix:</strong> 2 min outside — even overcast sky delivers this.</p></div></div>
+    <div class="mistake"><div class="mistake-num">5</div><div><h4>No Intentional Transition</h4><p>Sleep to task mode without a buffer creates chronic low-grade stress. <strong>Fix:</strong> The 10-minute routine IS the transition. Treat it as non-negotiable.</p></div></div>
+    <div class="mistake"><div class="mistake-num">6</div><div><h4>Scrolling Social Media</h4><p>Raises your stimulation threshold. Important tasks become unbearable. <strong>Fix:</strong> Move social apps off your home screen. Use Screen Time limits.</p></div></div>
+    <div class="mistake"><div class="mistake-num">7</div><div><h4>Overcomplicating It</h4><p>A 90-minute routine collapses in a week. <strong>Fix:</strong> Start with 10 minutes. Only add after 21 consecutive days of consistency.</p></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== 7-DAY CHALLENGE ==================== -->
+<section>
+  <div class="container fade-up">
+    <div class="section-label">Chapter 08</div>
+    <h2 class="section-title">The 7-Day Kickstart Challenge</h2>
+    <p class="section-subtitle">Don't do everything at once. Stack one element per day. By Day 7 it feels automatic.</p>
+
+    <div class="day-item">
+      <div class="day-line"><div class="day-dot" style="background:var(--green)">1</div><div class="day-connector" style="background:var(--green-bg)"></div></div>
+      <div class="day-content"><h4>Just breathe</h4><p>No phone for 2 minutes. Sit up. 5 deep breaths (4-7-6 pattern). That's the only goal.</p></div>
+    </div>
+    <div class="day-item">
+      <div class="day-line"><div class="day-dot" style="background:var(--blue)">2</div><div class="day-connector" style="background:var(--blue-bg)"></div></div>
+      <div class="day-content"><h4>Add water</h4><p>Breathe + 500ml water immediately. Prepare the glass the night before.</p></div>
+    </div>
+    <div class="day-item">
+      <div class="day-line"><div class="day-dot" style="background:var(--orange)">3</div><div class="day-connector" style="background:var(--orange-bg)"></div></div>
+      <div class="day-content"><h4>Add movement</h4><p>Breathe + water + 2 min of any movement. Pick the easiest option.</p></div>
+    </div>
+    <div class="day-item">
+      <div class="day-line"><div class="day-dot" style="background:var(--orange)">4</div><div class="day-connector" style="background:var(--yellow-bg)"></div></div>
+      <div class="day-content"><h4>Add sunlight</h4><p>All previous + step outside 2 min. Combine with movement if you want.</p></div>
+    </div>
+    <div class="day-item">
+      <div class="day-line"><div class="day-dot" style="background:var(--purple)">5</div><div class="day-connector" style="background:var(--purple-bg)"></div></div>
+      <div class="day-content"><h4>Full routine</h4><p>All 5 steps. Breathe + water + move + sunlight + write 3 lines. Time yourself.</p></div>
+    </div>
+    <div class="day-item">
+      <div class="day-line"><div class="day-dot" style="background:var(--text3)">6</div><div class="day-connector" style="background:var(--gray-bg)"></div></div>
+      <div class="day-content"><h4>Smooth it out</h4><p>Full routine, focus on flow. No thinking, no decisions. Automatic, like brushing teeth.</p></div>
+    </div>
+    <div class="day-item">
+      <div class="day-line"><div class="day-dot" style="background:var(--red)">7</div><div class="day-connector" style="background:transparent"></div></div>
+      <div class="day-content"><h4>Reflect &amp; lock in</h4><p>Full routine + 2 min reflection: how did this week feel different? Write it down.</p></div>
+    </div>
+
+    <div class="callout callout-yellow">
+      <div class="emoji">🔥</div>
+      <div class="text">Public commitment increases follow-through by 65%. Tell a friend. Post on Twitter using <strong>#ThrivioMornings</strong> and tag <strong>@Thrivio_care</strong> — we'll cheer you on.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== NUTRITION ==================== -->
+<section>
+  <div class="container fade-up">
+    <div class="section-label">Chapter 09</div>
+    <h2 class="section-title">Morning Nutrition</h2>
+    <p class="section-subtitle">What you eat in the first 2 hours has an outsized effect on energy, mood, and cognition. One rule governs everything:</p>
+
+    <div class="summary-bar" style="background:var(--green)">
+      <div class="main">Golden Rule: Protein + Fat before Carbs</div>
+    </div>
+
+    <h3 style="font-family:var(--serif);font-size:1.3rem;margin:2rem 0 .75rem">Best Morning Meals</h3>
+    <div class="food-list">
+      <div class="food-item"><span class="name">3 eggs + avocado + spinach</span><span class="protein">35g protein</span></div>
+      <div class="food-item"><span class="name">Greek yogurt + walnuts + berries + chia</span><span class="protein">28g protein</span></div>
+      <div class="food-item"><span class="name">Protein smoothie (whey + banana + almond butter)</span><span class="protein">30g protein</span></div>
+      <div class="food-item"><span class="name">Smoked salmon + cream cheese + whole grain toast</span><span class="protein">22g protein</span></div>
+      <div class="food-item"><span class="name">Cottage cheese + sliced fruit + pumpkin seeds</span><span class="protein">24g protein</span></div>
+    </div>
+
+    <h3 style="font-family:var(--serif);font-size:1.3rem;margin:2rem 0 .75rem">Worst Morning Choices</h3>
+    <div class="food-list">
+      <div class="food-item food-bad"><span class="name">Cereal + skim milk</span><span class="reason" style="color:var(--red)">→ sugar spike, hungry by 10am</span></div>
+      <div class="food-item food-bad"><span class="name">Toast + jam</span><span class="reason" style="color:var(--red)">→ blood sugar rollercoaster</span></div>
+      <div class="food-item food-bad"><span class="name">Orange juice</span><span class="reason" style="color:var(--red)">→ 4 oranges of sugar, no fiber</span></div>
+      <div class="food-item food-bad"><span class="name">Granola bars</span><span class="reason" style="color:var(--red)">→ more sugar than a candy bar</span></div>
+      <div class="food-item food-bad"><span class="name">Store-bought acai bowls</span><span class="reason" style="color:var(--red)">→ 500–800 cal, 60g+ sugar</span></div>
+    </div>
+
+    <h3 style="font-family:var(--serif);font-size:1.3rem;margin:2.5rem 0 .75rem">Coffee: The Right Way</h3>
+    <div class="step" style="background:var(--gray-bg);border-left-color:var(--text3)">
+      <ul style="list-style:none;padding:0">
+        <li style="padding:.4rem 0 .4rem 1.2rem;position:relative"><span style="position:absolute;left:0">•</span><strong>Wait 60–90 min</strong> after waking — cortisol peaks naturally first; adding caffeine creates anxiety, not alertness</li>
+        <li style="padding:.4rem 0 .4rem 1.2rem;position:relative"><span style="position:absolute;left:0">•</span><strong>Never on empty stomach</strong> — increases stomach acid 40%</li>
+        <li style="padding:.4rem 0 .4rem 1.2rem;position:relative"><span style="position:absolute;left:0">•</span><strong>Black or minimal additions</strong> — skip syrups and creamers (200–400 hidden calories)</li>
+        <li style="padding:.4rem 0 .4rem 1.2rem;position:relative"><span style="position:absolute;left:0">•</span><strong>Last cup before 2 PM</strong> — caffeine half-life is 5–6 hours</li>
+        <li style="padding:.4rem 0 .4rem 1.2rem;position:relative"><span style="position:absolute;left:0">•</span><strong>Add cinnamon</strong> — stabilizes blood sugar, enhances antioxidants</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== TRACKER ==================== -->
+<section>
+  <div class="container fade-up">
+    <div class="section-label">Chapter 10</div>
+    <h2 class="section-title">30-Day Tracker</h2>
+    <p class="section-subtitle">Print this section. Pin it where you'll see it every morning. Check off each step daily. Don't break the chain.</p>
+
+    <table class="tracker-table">
+      <thead>
+        <tr><th>Day</th><th>Breathe</th><th>Water</th><th>Move</th><th>Sun</th><th>Write</th><th>Notes</th></tr>
+      </thead>
+      <tbody id="tracker-body"></tbody>
+    </table>
+
+    <div class="callout callout-green">
+      <div class="emoji">🎯</div>
+      <div class="text"><strong>Milestones:</strong> Day 7 = small treat · Day 14 = share progress online · Day 21 = habit locked in · Day 30 = you're a different person. Celebrate.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== QUICK REFERENCE ==================== -->
+<section>
+  <div class="container fade-up">
+    <div class="section-label">Chapter 11</div>
+    <h2 class="section-title">Quick Reference Card</h2>
+    <p class="section-subtitle" style="margin-bottom:2rem">Keep this by your bed until memorized (usually 5–7 days).</p>
+
+    <div class="ref-step"><div class="ref-badge" style="background:var(--green)">M 1–2</div><div class="ref-label">Breathe</div><div class="ref-desc">No phone. 5 deep breaths. Inhale 4, hold 7, exhale 6.</div></div>
+    <div class="ref-step"><div class="ref-badge" style="background:var(--blue)">M 3–4</div><div class="ref-label">Hydrate</div><div class="ref-desc">Drink 500ml water (prepared night before).</div></div>
+    <div class="ref-step"><div class="ref-badge" style="background:var(--orange)">M 5–6</div><div class="ref-label">Move</div><div class="ref-desc">2 min any movement: jumping jacks, squats, stretch, dance.</div></div>
+    <div class="ref-step"><div class="ref-badge" style="background:var(--orange)">M 7–8</div><div class="ref-label">Sunlight</div><div class="ref-desc">Step outside 2 min. No sunglasses. Look toward sky.</div></div>
+    <div class="ref-step"><div class="ref-badge" style="background:var(--purple)">M 9–10</div><div class="ref-label">Intend</div><div class="ref-desc">Write: 1 gratitude + 1 priority + desired feeling.</div></div>
+
+    <div class="callout callout-yellow" style="margin-top:1.5rem">
+      <div class="emoji">📋</div>
+      <div class="text">
+        <strong>Three Rules:</strong><br>
+        1. Phone stays untouched until all 5 steps are complete.<br>
+        2. Do them in order — the sequence is deliberate.<br>
+        3. 80% consistency beats 100% perfection.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="cta-section">
+  <div class="container">
+    <h2 style="font-style:italic">You're Ready.</h2>
+    <p style="max-width:480px;margin:0 auto 1rem;line-height:1.8">Everything in this guide is free, evidence-based, and works for anyone. Set your alarm. Fill a water glass. Put your phone across the room.</p>
+    <a href="https://x.com/Thrivio_care" target="_blank" class="cta-handle">@Thrivio_care</a>
+    <p style="margin-top:.5rem">Use <strong style="color:white">#ThrivioMornings</strong> · We'll cheer you on</p>
+    <p style="margin-top:2rem;font-size:.85rem">Share this guide freely. Health knowledge should never be gatekept.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Made with care by <a href="https://x.com/Thrivio_care">Thrivio Care</a> · April 2026</p>
+</footer>
+
+<script>
+// Generate tracker rows
+const tbody=document.getElementById('tracker-body');
+for(let i=1;i<=30;i++){
+  const tr=document.createElement('tr');
+  tr.innerHTML=`<td>${i}</td>`+
+    '<td><span class="checkbox"></span></td>'.repeat(5)+
+    '<td style="min-width:80px"></td>';
+  tbody.appendChild(tr);
+}
+
+// Scroll animations
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
